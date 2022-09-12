@@ -1,18 +1,26 @@
 var lavarropas = /** @class */ (function () {
-    function lavarropas(lavar, prenderApagar, programas) {
+    function lavarropas(lavar, estaPrendido, programas) {
         this.lavar = lavar;
-        this.prenderApagar = prenderApagar;
+        this.estaPrendido = estaPrendido;
         this.programas = programas;
     }
     lavarropas.prototype.prendido = function () {
-        console.log("Esta prendido");
+        if (this.estaPrendido) {
+            this.estaPrendido = false;
+        }
+        else {
+            this.estaPrendido = true;
+        }
     };
     lavarropas.prototype.pausa = function () {
         console.log("Pulse para reanudar");
     };
     lavarropas.prototype.apagado = function () {
-        if (this.prenderApagar === false) {
-            console.log("Esta apagado");
+        if (this.estaPrendido) {
+            this.estaPrendido = true;
+        }
+        else {
+            this.estaPrendido = false;
         }
     };
     return lavarropas;

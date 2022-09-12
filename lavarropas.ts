@@ -1,25 +1,35 @@
 
 class lavarropas{
     lavar : boolean;
-    prenderApagar:boolean;
+    estaPrendido:boolean;
     programas:string;
 
-    constructor(lavar : boolean,prenderApagar:boolean,programas:string){
+    constructor(lavar : boolean,estaPrendido:boolean,programas:string){
         this.lavar = lavar;
-        this.prenderApagar = prenderApagar;
+        this.estaPrendido = estaPrendido;
         this.programas = programas;
     }
 
+   
     prendido(){
-     console.log("Esta prendido");
+        if (this.estaPrendido){
+        this.estaPrendido = false
+        }else{
+        this.estaPrendido = true
+        }
     }
+    
 
     pausa(){
      console.log("Pulse para reanudar");
     }
 
     apagado(){
-     console.log("Esta apagado");
+        if (this.estaPrendido){
+        this.estaPrendido = true
+        }else{
+        this.estaPrendido = false
+        }
     }
 }
 
