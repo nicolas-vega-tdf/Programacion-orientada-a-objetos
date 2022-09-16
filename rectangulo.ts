@@ -50,7 +50,7 @@ class rectangulo{
 }
 
 
-let consultar = new rectanculo(250,150);
+let consultar = new rectangulo(50,150);
 
 consultar.getAltura()
 consultar.getBase()
