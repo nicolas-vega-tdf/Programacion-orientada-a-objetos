@@ -1,8 +1,8 @@
 
 class lavarropas{
-    lavar : boolean;
-    estaPrendido:boolean;
-    programas:string;
+    private lavar : boolean;
+    private estaPrendido:boolean;
+    private programas:string;
 
     constructor(lavar : boolean,estaPrendido:boolean,programas:string){
         this.lavar = lavar;
@@ -10,30 +10,38 @@ class lavarropas{
         this.programas = programas;
     }
 
-   
-    prendido(){
-        if (this.estaPrendido){
+    getLavar():boolean{
+        return this.lavar
+    }
+
+    setLavar(plavar:boolean):void{
+        this.lavar = plavar;
+    }
+
+    getPrendido():boolean{
+        return this.estaPrendido 
+    }
+
+    setPrendido(pPrendido:boolean):void{
+        if (pPrendido === false){
         this.estaPrendido = false
         }else{
         this.estaPrendido = true
         }
     }
     
-
-    pausa(){
+    setPausa(){
      console.log("Pulse para reanudar");
     }
 
-    apagado(){
-        if (this.estaPrendido){
-        this.estaPrendido = true
-        }else{
-        this.estaPrendido = false
-        }
+    getProgramas():string{
+        return this.programas
+    }
+
+    setProgramas(pProgramas:string):void{
+        this.programas = pProgramas
     }
 }
 
 let lavarropa = new lavarropas(true,true,"centrifugar");
 
-lavarropa.prendido();
-lavarropa.apagado();
