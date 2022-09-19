@@ -3,15 +3,17 @@ class lavarropas{
     private lavar : boolean;
     private estaPrendido:boolean;
     private programas:string;
+    private pausa:boolean;
 
-    constructor(lavar : boolean,estaPrendido:boolean,programas:string){
+    constructor(lavar : boolean,estaPrendido:boolean,programas:string,pausa:boolean){
         this.lavar = lavar;
         this.estaPrendido = estaPrendido;
         this.programas = programas;
+        this.pausa = pausa
     }
 
     getLavar():boolean{
-        return this.lavar
+        return this.lavar;
     }
 
     setLavar(plavar:boolean):void{
@@ -19,7 +21,7 @@ class lavarropas{
     }
 
     getPrendido():boolean{
-        return this.estaPrendido 
+        return this.estaPrendido ;
     }
 
     setPrendido(pPrendido:boolean):void{
@@ -30,18 +32,37 @@ class lavarropas{
         }
     }
     
-    setPausa(){
-     console.log("Pulse para reanudar");
+    getPausa():boolean{
+        return this.pausa;
+    }
+
+    setPausa(pPausa:boolean):number{
+     if(pPausa == true){
+        return 1
+     }else{
+        return 2
+     }
     }
 
     getProgramas():string{
-        return this.programas
+        return this.programas;
     }
 
     setProgramas(pProgramas:string):void{
-        this.programas = pProgramas
+        this.programas = pProgramas;
     }
 }
 
-let lavarropa = new lavarropas(true,true,"centrifugar");
+let lavarropa = new lavarropas(true,true,"centrifugar",false);
 
+if (lavarropa.getPrendido() == true){
+    console.log("Esta prendido");
+}else{
+    console.log("Esta apagado");
+}
+
+if(lavarropa.setPausa(false) == 1){
+    console.log("Esta pausado");
+}else{
+    console.log("Pulse 1 para pausar");
+}

@@ -1,8 +1,9 @@
 var lavarropas = /** @class */ (function () {
-    function lavarropas(lavar, estaPrendido, programas) {
+    function lavarropas(lavar, estaPrendido, programas, pausa) {
         this.lavar = lavar;
         this.estaPrendido = estaPrendido;
         this.programas = programas;
+        this.pausa = pausa;
     }
     lavarropas.prototype.getLavar = function () {
         return this.lavar;
@@ -21,8 +22,16 @@ var lavarropas = /** @class */ (function () {
             this.estaPrendido = true;
         }
     };
-    lavarropas.prototype.setPausa = function () {
-        console.log("Pulse para reanudar");
+    lavarropas.prototype.getPausa = function () {
+        return this.pausa;
+    };
+    lavarropas.prototype.setPausa = function (pPausa) {
+        if (pPausa == true) {
+            return 1;
+        }
+        else {
+            return 2;
+        }
     };
     lavarropas.prototype.getProgramas = function () {
         return this.programas;
@@ -32,4 +41,16 @@ var lavarropas = /** @class */ (function () {
     };
     return lavarropas;
 }());
-var lavarropa = new lavarropas(true, true, "centrifugar");
+var lavarropa = new lavarropas(true, false, "centrifugar", false);
+if (lavarropa.getPrendido() == true) {
+    console.log("Esta prendido");
+}
+else {
+    console.log("Esta apagado");
+}
+if (lavarropa.setPausa(false) == 1) {
+    console.log("Esta pausado");
+}
+else {
+    console.log("Pulse 1 para pausar");
+}
