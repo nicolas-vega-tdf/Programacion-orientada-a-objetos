@@ -1,14 +1,14 @@
 class rectangulo{
     base : number ;
     altura : number;
-    base2: number ;
-    altura2:number;
+    segundaBase: number ;
+    segundaAltura:number;
 
     constructor(paramBase:number, paramAltura:number , paramBase2:number ,paramAltura2:number){
         this.base = paramBase;
         this.altura = paramAltura;
-        this.altura2 = paramAltura2;
-        this.base2 = paramBase2;
+        this.segundaAltura = paramAltura2;
+        this.segundaBase = paramBase2;
     }
 
     getBase():number{
@@ -26,9 +26,9 @@ class rectangulo{
     }
 
     comparar():number{
-        if(this.base > this.base2){
+        if(this.base > this.segundaBase){
             return 1
-        }else if(this.base < this.base2){
+        }else if(this.base < this.segundaBase){
             return -1
         }else{
             return 0

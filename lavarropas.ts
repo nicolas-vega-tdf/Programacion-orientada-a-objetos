@@ -6,12 +6,20 @@ class lavarropas{
     private marca:string;
     private modelo:number;
 
-    constructor(estaPrendido:boolean, programas:string, pausa:boolean, paramMarca :string , modelo :number ){
+    constructor(estaPrendido:boolean, programas:string, pausa:boolean, marca :string , modelo :number ){
         this.estaPrendido = estaPrendido;
         this.programa = programas;
         this.pausa = pausa;
-        this.marca = paramMarca;
+        this.marca = marca;
         this.modelo = modelo;
+    }
+
+    getMarca():string{
+        return this.marca
+    }
+
+    getModelo():number{
+        return this.modelo
     }
 
     getPrendido():boolean{
@@ -38,24 +46,24 @@ class lavarropas{
      }
     }
 
-    getProgramas():string{
+    getPrograma():string{
         return this.programa;
     }
 
-    setProgramas(pProgramas:string):void{
+    setPrograma(pProgramas:string):void{
         this.programa = pProgramas;
     }
 }
 
-let lavarropalirpol = new lavarropas(true,"centrifugar",false,"lirpol",22270);
+let lavarropaLirpol = new lavarropas(true,"centrifugar",false,"lirpol",22270);
 
-if (lavarropalirpol.getPrendido() == true){
+if (lavarropaLirpol.getPrendido() == true){
     console.log("Esta prendido");
 }else{
     console.log("Esta apagado");
 }
 
-if(lavarropalirpol.Pausa(false) == 1){
+if(lavarropaLirpol.Pausa(false) == 1){
     console.log("Esta pausado");
 }else{
     console.log("Pulse 1 para pausar");
