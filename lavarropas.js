@@ -1,15 +1,16 @@
 var lavarropas = /** @class */ (function () {
-    function lavarropas(lavar, estaPrendido, programas, pausa) {
-        this.lavar = lavar;
+    function lavarropas(estaPrendido, programas, pausa, marca, modelo) {
         this.estaPrendido = estaPrendido;
-        this.programas = programas;
+        this.programa = programas;
         this.pausa = pausa;
+        this.marca = marca;
+        this.modelo = modelo;
     }
-    lavarropas.prototype.getLavar = function () {
-        return this.lavar;
+    lavarropas.prototype.getMarca = function () {
+        return this.marca;
     };
-    lavarropas.prototype.setLavar = function (plavar) {
-        this.lavar = plavar;
+    lavarropas.prototype.getModelo = function () {
+        return this.modelo;
     };
     lavarropas.prototype.getPrendido = function () {
         return this.estaPrendido;
@@ -25,7 +26,7 @@ var lavarropas = /** @class */ (function () {
     lavarropas.prototype.getPausa = function () {
         return this.pausa;
     };
-    lavarropas.prototype.setPausa = function (pPausa) {
+    lavarropas.prototype.Pausa = function (pPausa) {
         if (pPausa == true) {
             return 1;
         }
@@ -33,22 +34,22 @@ var lavarropas = /** @class */ (function () {
             return 2;
         }
     };
-    lavarropas.prototype.getProgramas = function () {
-        return this.programas;
+    lavarropas.prototype.getPrograma = function () {
+        return this.programa;
     };
-    lavarropas.prototype.setProgramas = function (pProgramas) {
-        this.programas = pProgramas;
+    lavarropas.prototype.setPrograma = function (pProgramas) {
+        this.programa = pProgramas;
     };
     return lavarropas;
 }());
-var lavarropa = new lavarropas(true, false, "centrifugar", false);
-if (lavarropa.getPrendido() == true) {
+var lavarropaLirpol = new lavarropas(true, "centrifugar", false, "lirpol", 22270);
+if (lavarropaLirpol.getPrendido() == true) {
     console.log("Esta prendido");
 }
 else {
     console.log("Esta apagado");
 }
-if (lavarropa.setPausa(false) == 1) {
+if (lavarropaLirpol.Pausa(false) == 1) {
     console.log("Esta pausado");
 }
 else {
