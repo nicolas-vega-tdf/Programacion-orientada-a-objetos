@@ -1,7 +1,9 @@
 var rectangulo = /** @class */ (function () {
-    function rectangulo(paramBase, paramAltura) {
+    function rectangulo(paramBase, paramAltura, paramBase2, paramAltura2) {
         this.base = paramBase;
         this.altura = paramAltura;
+        this.altura2 = paramAltura2;
+        this.base2 = paramBase2;
     }
     rectangulo.prototype.getBase = function () {
         return this.base;
@@ -9,16 +11,16 @@ var rectangulo = /** @class */ (function () {
     rectangulo.prototype.getAltura = function () {
         return this.altura;
     };
-    rectangulo.prototype.setArea = function () {
+    rectangulo.prototype.calcularArea = function () {
         var area = 0;
         area = this.base * this.altura;
         return area;
     };
-    rectangulo.prototype.comparacion = function (rectanculo) {
-        if (rectanculo > this.base) {
+    rectangulo.prototype.comparar = function () {
+        if (this.base > this.base2) {
             return 1;
         }
-        else if (rectanculo < this.base) {
+        else if (this.base < this.base2) {
             return -1;
         }
         else {
@@ -33,7 +35,7 @@ var rectangulo = /** @class */ (function () {
             console.log("no es un cuadrado");
         }
     };
-    rectangulo.prototype.acostado = function () {
+    rectangulo.prototype.calcularPosicion = function () {
         if (this.altura > this.base) {
             console.log("esta parado");
         }
@@ -43,10 +45,5 @@ var rectangulo = /** @class */ (function () {
     };
     return rectangulo;
 }());
-var consultar = new rectangulo(50, 150);
-consultar.getAltura();
-consultar.getBase();
-consultar.setArea();
-consultar.comparacion(50);
-consultar.comprobacion();
-consultar.acostado();
+var consultar = new rectangulo(80, 150, 70, 50);
+console.log(consultar.comparar());

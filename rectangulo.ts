@@ -1,10 +1,14 @@
 class rectangulo{
     base : number ;
     altura : number;
+    base2: number ;
+    altura2:number;
 
-    constructor(paramBase:number, paramAltura:number){
+    constructor(paramBase:number, paramAltura:number , paramBase2:number ,paramAltura2:number){
         this.base = paramBase;
         this.altura = paramAltura;
+        this.altura2 = paramAltura2;
+        this.base2 = paramBase2;
     }
 
     getBase():number{
@@ -15,16 +19,16 @@ class rectangulo{
         return this.altura;
     }
 
-    setArea():number{
+    calcularArea():number{
         let area :number = 0;
         area = this.base * this.altura ;
         return area 
     }
 
-    comparacion(rectanculo:number):number{
-        if(rectanculo > this.base){
+    comparar():number{
+        if(this.base > this.base2){
             return 1
-        }else if(rectanculo < this.base){
+        }else if(this.base < this.base2){
             return -1
         }else{
             return 0
@@ -39,7 +43,7 @@ class rectangulo{
         }
     }
     
-    acostado():void{
+    calcularPosicion():void{
         if(this.altura > this.base){
             console.log("esta parado");
         }else{
@@ -50,11 +54,6 @@ class rectangulo{
 }
 
 
-let consultar = new rectangulo(50,150);
+let consultar = new rectangulo(80,150,70,50);
 
-consultar.getAltura()
-consultar.getBase()
-consultar.setArea()
-consultar.comparacion(50)
-consultar.comprobacion()
-consultar.acostado()
+console.log(consultar.comparar());
