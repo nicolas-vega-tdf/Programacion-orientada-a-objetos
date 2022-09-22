@@ -2,8 +2,8 @@ var rectangulo = /** @class */ (function () {
     function rectangulo(paramBase, paramAltura, paramBase2, paramAltura2) {
         this.base = paramBase;
         this.altura = paramAltura;
-        this.altura2 = paramAltura2;
-        this.base2 = paramBase2;
+        this.segundaAltura = paramAltura2;
+        this.segundaBase = paramBase2;
     }
     rectangulo.prototype.getBase = function () {
         return this.base;
@@ -17,10 +17,10 @@ var rectangulo = /** @class */ (function () {
         return area;
     };
     rectangulo.prototype.comparar = function () {
-        if (this.base > this.base2) {
+        if (this.base > this.segundaBase) {
             return 1;
         }
-        else if (this.base < this.base2) {
+        else if (this.base < this.segundaBase) {
             return -1;
         }
         else {
