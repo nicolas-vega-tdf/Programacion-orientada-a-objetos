@@ -26,8 +26,8 @@ class lavarropas{
         return this.estaPrendido ;
     }
 
-    setPrendido(pPrendido:boolean):void{
-        if (pPrendido === false){
+    setPrenderApagar():void{
+        if (this.estaPrendido === false){
         this.estaPrendido = false
         }else{
         this.estaPrendido = true
