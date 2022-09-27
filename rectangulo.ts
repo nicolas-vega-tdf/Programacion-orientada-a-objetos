@@ -1,14 +1,10 @@
-class rectangulo{
+class Rectangulo{
     base : number ;
     altura : number;
-    segundaBase: number ;
-    segundaAltura:number;
 
-    constructor(paramBase:number, paramAltura:number , paramBase2:number ,paramAltura2:number){
+    constructor(paramBase:number, paramAltura:number){
         this.base = paramBase;
         this.altura = paramAltura;
-        this.segundaAltura = paramAltura2;
-        this.segundaBase = paramBase2;
     }
 
     getBase():number{
@@ -25,15 +21,6 @@ class rectangulo{
         return area 
     }
 
-    comparar():number{
-        if(this.base > this.segundaBase){
-            return 1
-        }else if(this.base < this.segundaBase){
-            return -1
-        }else{
-            return 0
-        }
-    }
 
     comprobacion():void{
         if(this.base === this.altura){
@@ -53,7 +40,34 @@ class rectangulo{
 
 }
 
+class Comparar{
+    rectangulos:Rectangulo[]
 
-let consultar = new rectangulo(80,150,70,50);
+    constructor(param:Rectangulo[]){
+        this.rectangulos = param;
+    }
 
-console.log(consultar.comparar());
+
+    comparar(arreglo:Rectangulo):number{
+        let respuesta: number = 0;
+
+        for(let i:number = 0; i < this.rectangulos.length;i++){
+            if(this.rectangulos[i].getBase() > arreglo.getBase()){
+                respuesta = 1 ;
+            }else (this.rectangulos[i].getBase() < arreglo.getBase()){
+                respuesta = 2 ;
+            }
+        }
+        return respuesta 
+    }
+
+}
+
+let rectangulo1 = new Rectangulo(80,150);
+let rectangulo2 = new Rectangulo(20,70);
+
+let arregloDeRectangulos:Rectangulo[] = [rectangulo1,rectangulo2]
+
+let comparar1:Comparar = new Comparar(arregloDeRectangulos);
+
+console.log(comparar1);

@@ -1,33 +1,20 @@
-var rectangulo = /** @class */ (function () {
-    function rectangulo(paramBase, paramAltura, paramBase2, paramAltura2) {
+var Rectangulo = /** @class */ (function () {
+    function Rectangulo(paramBase, paramAltura) {
         this.base = paramBase;
         this.altura = paramAltura;
-        this.segundaAltura = paramAltura2;
-        this.segundaBase = paramBase2;
     }
-    rectangulo.prototype.getBase = function () {
+    Rectangulo.prototype.getBase = function () {
         return this.base;
     };
-    rectangulo.prototype.getAltura = function () {
+    Rectangulo.prototype.getAltura = function () {
         return this.altura;
     };
-    rectangulo.prototype.calcularArea = function () {
+    Rectangulo.prototype.calcularArea = function () {
         var area = 0;
         area = this.base * this.altura;
         return area;
     };
-    rectangulo.prototype.comparar = function () {
-        if (this.base > this.segundaBase) {
-            return 1;
-        }
-        else if (this.base < this.segundaBase) {
-            return -1;
-        }
-        else {
-            return 0;
-        }
-    };
-    rectangulo.prototype.comprobacion = function () {
+    Rectangulo.prototype.comprobacion = function () {
         if (this.base === this.altura) {
             console.log("es un cuadrado");
         }
@@ -35,7 +22,7 @@ var rectangulo = /** @class */ (function () {
             console.log("no es un cuadrado");
         }
     };
-    rectangulo.prototype.calcularPosicion = function () {
+    Rectangulo.prototype.calcularPosicion = function () {
         if (this.altura > this.base) {
             console.log("esta parado");
         }
@@ -43,7 +30,30 @@ var rectangulo = /** @class */ (function () {
             console.log("esta acostado");
         }
     };
-    return rectangulo;
+    return Rectangulo;
 }());
-var consultar = new rectangulo(80, 150, 70, 50);
-console.log(consultar.comparar());
+var Comparar = /** @class */ (function () {
+    function Comparar(param) {
+        this.rectangulos = param;
+    }
+    Comparar.prototype.comparar = function (arreglo) {
+        var respuesta = 0;
+        for (var i = 0; i < this.rectangulos.length; i++) {
+            if (this.rectangulos[i].getBase() > arreglo.getBase()) {
+                respuesta = 1;
+            }
+            else
+                (this.rectangulos[i].getBase() < arreglo.getBase());
+            {
+                respuesta = 2;
+            }
+        }
+        return respuesta;
+    };
+    return Comparar;
+}());
+var rectangulo1 = new Rectangulo(80, 150);
+var rectangulo2 = new Rectangulo(20, 70);
+var arregloDeRectangulos = [rectangulo1, rectangulo2];
+var comparar1 = new Comparar(arregloDeRectangulos);
+console.log(comparar1);
