@@ -43,8 +43,8 @@ class Rectangulo{
 class Comparar{
     rectangulo:Rectangulo[]
 
-    constructor(param:Rectangulo[]){
-        this.rectangulo = param;
+    constructor(paramRectangulo:Rectangulo[]){
+        this.rectangulo = paramRectangulo;
     }
 
 
@@ -70,6 +70,6 @@ let arregloDeRectangulos:Rectangulo[] = [rectangulo1,rectangulo2]
 
 let consultar = new Comparar(arregloDeRectangulos);
 
-let respuesta:number = consultar.comparar(rectangulo2)
+let respuesta:number = consultar.comparar(rectangulo2);
 
 console.log(respuesta);

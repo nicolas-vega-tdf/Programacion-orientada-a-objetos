@@ -34,15 +34,15 @@ var Rectangulo = /** @class */ (function () {
 }());
 var Comparar = /** @class */ (function () {
     function Comparar(param) {
-        this.rectangulos = param;
+        this.rectangulo = param;
     }
     Comparar.prototype.comparar = function (arreglo) {
         var respuesta = 0;
-        for (var i = 0; i < this.rectangulos.length; i++) {
-            if (this.rectangulos[i].getBase() > arreglo.getBase()) {
+        for (var i = 0; i < this.rectangulo.length; i++) {
+            if (this.rectangulo[i].getBase() > arreglo.getBase()) {
                 respuesta = 1;
             }
-            else if (this.rectangulos[i].getBase() < arreglo.getBase()) {
+            else if (this.rectangulo[i].getBase() < arreglo.getBase()) {
                 respuesta = 2;
             }
         }
@@ -53,6 +53,6 @@ var Comparar = /** @class */ (function () {
 var rectangulo1 = new Rectangulo(80, 150);
 var rectangulo2 = new Rectangulo(20, 70);
 var arregloDeRectangulos = [rectangulo1, rectangulo2];
-var comparar1 = new Comparar(arregloDeRectangulos);
-var respuesta = comparar1.comparar(rectangulo2);
+var consultar = new Comparar(arregloDeRectangulos);
+var respuesta = consultar.comparar(rectangulo2);
 console.log(respuesta);
