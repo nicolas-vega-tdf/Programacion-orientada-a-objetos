@@ -42,9 +42,7 @@ var Comparar = /** @class */ (function () {
             if (this.rectangulos[i].getBase() > arreglo.getBase()) {
                 respuesta = 1;
             }
-            else
-                (this.rectangulos[i].getBase() < arreglo.getBase());
-            {
+            else if (this.rectangulos[i].getBase() < arreglo.getBase()) {
                 respuesta = 2;
             }
         }
@@ -56,4 +54,5 @@ var rectangulo1 = new Rectangulo(80, 150);
 var rectangulo2 = new Rectangulo(20, 70);
 var arregloDeRectangulos = [rectangulo1, rectangulo2];
 var comparar1 = new Comparar(arregloDeRectangulos);
-console.log(comparar1);
+var respuesta = comparar1.comparar(rectangulo2);
+console.log(respuesta);

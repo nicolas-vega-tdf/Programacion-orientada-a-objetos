@@ -41,20 +41,20 @@ class Rectangulo{
 }
 
 class Comparar{
-    rectangulos:Rectangulo[]
+    rectangulo:Rectangulo[]
 
     constructor(param:Rectangulo[]){
-        this.rectangulos = param;
+        this.rectangulo = param;
     }
 
 
     comparar(arreglo:Rectangulo):number{
         let respuesta: number = 0;
 
-        for(let i:number = 0; i < this.rectangulos.length;i++){
-            if(this.rectangulos[i].getBase() > arreglo.getBase()){
+        for(let i:number = 0; i < this.rectangulo.length;i++){
+            if(this.rectangulo[i].getBase() > arreglo.getBase()){
                 respuesta = 1 ;
-            }else (this.rectangulos[i].getBase() < arreglo.getBase()){
+            }else if(this.rectangulo[i].getBase() < arreglo.getBase()){
                 respuesta = 2 ;
             }
         }
@@ -68,6 +68,8 @@ let rectangulo2 = new Rectangulo(20,70);
 
 let arregloDeRectangulos:Rectangulo[] = [rectangulo1,rectangulo2]
 
-let comparar1:Comparar = new Comparar(arregloDeRectangulos);
+let consultar = new Comparar(arregloDeRectangulos);
 
-console.log(comparar1);
+let respuesta:number = consultar.comparar(rectangulo2)
+
+console.log(respuesta);
