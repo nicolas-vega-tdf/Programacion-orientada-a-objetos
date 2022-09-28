@@ -1,19 +1,13 @@
-import { GestorLibros } from "./gestor";
-import { Libro } from "./libro";
+import { Masajista } from "./masajista";
+import { Entrenador } from "./entrenador";
+import { Futbolista } from "./futbolista";
 
-let libro1 = new Libro("harry poter");
-let libro2 = new Libro("stranger things");
+let fecha = new Date("10-02-1990")
 
-let arregloDeLibros:Libro[] =[libro1,libro2];
+let messi = new Futbolista("Leonel","Messi",12444370,fecha);
+let enzo:Masajista = new Masajista("Enzo","bustos",33123478,fecha,"quinesiologo");
+let bautista:Entrenador = new Entrenador("Bautista","lopez",33012333,fecha);
 
-let gestorDeTdf:GestorLibros = new GestorLibros(arregloDeLibros);
-
-let libro3 = new Libro("Ana franck");
-
-let respuesta : boolean = gestorDeTdf.consultarLibro(libro3);
-console.log(respuesta);
-
-gestorDeTdf.insertarLibro(libro3);
-
-let respuesta2 : boolean = gestorDeTdf.consultarLibro(libro3);
-console.log(respuesta2);
+console.log(messi.goles());
+console.log(enzo.getCertificado());
+console.log(bautista.titulosObtenidos());
