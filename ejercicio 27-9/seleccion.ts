@@ -2,9 +2,9 @@ export class Seleccion{
     protected nombre: string;
     protected apellido: string;
     protected pasaporte: number;
-    protected nacimiento: Date;
+    protected nacimiento: number;
 
-    constructor(paramNombre:string,paramApellido:string,paramPasaporte:number,paramNacimiento:Date){
+    constructor(paramNombre:string,paramApellido:string,paramPasaporte:number,paramNacimiento:number){
         this.nombre = paramNombre;
         this.apellido = paramApellido;
         this.pasaporte = paramPasaporte;
@@ -35,11 +35,11 @@ export class Seleccion{
         this.pasaporte = paraPasaporte;
     }
 
-    getNacimiento():Date{
+    getNacimiento():number{
         return this.nacimiento;
     }
 
-    setNacimiento(paraNacimiento:Date):void{
+    setNacimiento(paraNacimiento:number):void{
         this.nacimiento = paraNacimiento;
     }
 

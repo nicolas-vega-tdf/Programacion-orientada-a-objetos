@@ -1,7 +1,7 @@
 import { Seleccion } from "./seleccion";
 
 export class Entrenador extends Seleccion{
-    constructor(paramNombre:string,paramApellido:string,paramPasaporte:number,paramNacimiento:Date){
+    constructor(paramNombre:string,paramApellido:string,paramPasaporte:number,paramNacimiento:number){
         super(paramNombre,paramApellido,paramPasaporte,paramNacimiento);
     }
 
