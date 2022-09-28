@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var gestor_1 = require("./gestor");
+var libro_1 = require("./libro");
+var libro1 = new libro_1.Libro("harry poter");
+var libro2 = new libro_1.Libro("stranger things");
+var arregloDeLibros = [libro1, libro2];
+var gestorDeTdf = new gestor_1.GestorLibros(arregloDeLibros);
+var libro3 = new libro_1.Libro("Ana franck");
+var respuesta = gestorDeTdf.consultarLibro(libro3);
+console.log(respuesta);
+gestorDeTdf.insertarLibro(libro3);
+var respuesta2 = gestorDeTdf.consultarLibro(libro3);
+console.log(respuesta2);

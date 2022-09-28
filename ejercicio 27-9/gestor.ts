@@ -1,7 +1,7 @@
 import {Libro} from './libro'
 
 
-class GestorLibros{
+export class GestorLibros{
     private listadoDeLibros : Libro []
 
     constructor(listadoParam:Libro[]){
