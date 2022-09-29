@@ -11,3 +11,4 @@ let bautista:Entrenador = new Entrenador("Bautista","lopez",33012333,3-23-4545);
 console.log(messi.goles());
 console.log(enzo.getCertificado());
 console.log(bautista.titulosObtenidos());
+console.log(messi.getNacimiento());
