@@ -9,11 +9,11 @@ export class CuentaCorriente extends Cuenta{
     }
 
     retirar(paramRetiro:number): void {
-        if(this.saldo < paramRetiro){
+        if(this.saldo > paramRetiro){
             this.saldo - paramRetiro
             console.log("retiraste: "+ paramRetiro);
         } else {
-            console.log("No retiraste nada");
+            console.log("Saldo insuficiente");
         }
     }
 

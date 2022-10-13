@@ -23,8 +23,7 @@ export class CuentaAhorro extends Cuenta {
     }
 
     retirar(paramRetiro:number): void {
-      let aux = this.saldo - this.saldoMinimo;
-        if(aux > paramRetiro)
+        if(this.saldoMinimo > paramRetiro)
         this.saldo = this.saldo - paramRetiro;
         console.log("Usted retiro: " + paramRetiro);               
     }
