@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var Persona_1 = require("./Persona");
+var CuentaCorriente_1 = require("./CuentaCorriente");
+var CuentaAhorro_1 = require("./CuentaAhorro");
+var pepe = new Persona_1.Persona("pepe", "ramires", 44781250);
+var ccPepe = new CuentaCorriente_1.CuentaCorriente(777652, pepe);
+var cahorPepe = new CuentaAhorro_1.CuentaAhorro(5239107, pepe);
+ccPepe.ingresar(500000);
+ccPepe.actualizarSaldo();
+console.log(ccPepe.toString());
+console.log("//////////////////////////////////");
+cahorPepe.ingresar(1000000);
+cahorPepe.setInteres(2);
+cahorPepe.actualizarSaldo();
+cahorPepe.setSaldominimo(10000);
+var saldo = cahorPepe.getSaldo();
+console.log(cahorPepe.toString());
